@@ -43,11 +43,13 @@
       border: none;
       top: 32px;
       right: 32px;
-      padding: 12px;
+      padding: 10px;
+      border-radius: 0;
 
       svg {
         width: 16px;
         height: 16px;
+        color: colors.$primary-700;
       }
       
       @media (max-width: 767px) {
@@ -70,8 +72,12 @@
 
       .option {
         @include weights.regular;
+        input {
+          cursor: pointer;
+        }
 
         label {
+          cursor: pointer;
           .link {
             @media (max-width: 767px) {
               display: none;
@@ -97,5 +103,21 @@
     visibility: hidden;
     opacity: 0;
     pointer-events: none;
+  }
+}
+
+.dark {
+  .launch-app.modal.container { 
+    & > .content {
+      background-color: colors.$gray-800;
+
+      .close.button {
+        background-color: colors.$gray-700;
+
+        svg {
+          color: white;
+        }
+      }
+    }
   }
 }
